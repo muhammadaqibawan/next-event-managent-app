@@ -1,0 +1,81 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id           String     @id @default(cuid())
+  email        String     @unique
+  passwordHash String
+  events       Event[]
+  reminders    Reminder[]
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  logs ReminderLog[]
+}
+
+model Event {
+  id          String      @id @default(cuid())
+  title       String
+  description String?
+  date        DateTime
+  location    String
+  status      EventStatus
+  user        User        @relation(fields: [userId], references: [id])
+  userId      String
+
+  reminders Reminder[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  logs ReminderLog[]
+
+  @@unique([title, date, userId]) // Enforce no duplicate events
+  @@index([userId])
+}
+
+model Reminder {
+  id           String   @id @default(cuid())
+  reminderTime DateTime
+  event        Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  eventId      String
+  user         User     @relation(fields: [userId], references: [id])
+  userId       String
+
+  createdAt DateTime @default(now())
+  
+
+  @@unique([eventId, userId])
+  @@index([userId])
+  @@index([eventId])
+}
+
+model ReminderLog {
+  id        String   @id @default(cuid())
+  eventId   String
+  userId    String
+  message   String
+  reminderType ReminderType @default(AUTO)
+  createdAt DateTime @default(now())
+
+  event Event @relation(fields: [eventId], references: [id])
+  user  User  @relation(fields: [userId], references: [id])
+}
+
+enum EventStatus {
+  DRAFT
+  PUBLISHED
+  CANCELED
+}
+
+enum ReminderType {
+  AUTO
+  MANUAL
+}
+

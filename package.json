@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "cron": "ts-node --transpile-only src/scripts/reminderCron.ts"
+    "cron": "ts-node --transpile-only src/scripts/reminderCron.ts",
+    "setup": "prisma generate && prisma migrate dev --name init && prisma db seed"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

@@ -32,6 +32,18 @@ CREATE TABLE "Reminder" (
     CONSTRAINT "Reminder_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
+-- CreateTable
+CREATE TABLE "ReminderLog" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "eventId" TEXT NOT NULL,
+    "userId" TEXT NOT NULL,
+    "message" TEXT NOT NULL,
+    "reminderType" TEXT NOT NULL DEFAULT 'AUTO',
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT "ReminderLog_eventId_fkey" FOREIGN KEY ("eventId") REFERENCES "Event" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "ReminderLog_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
@@ -46,3 +58,6 @@ CREATE INDEX "Reminder_userId_idx" ON "Reminder"("userId");
 
 -- CreateIndex
 CREATE INDEX "Reminder_eventId_idx" ON "Reminder"("eventId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Reminder_eventId_userId_key" ON "Reminder"("eventId", "userId");

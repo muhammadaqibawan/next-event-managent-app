@@ -37,7 +37,6 @@ npm install
 
 3️⃣ Set Up Environment Variables
 Create a .env.local file in the root of your project and add the following:
-DATABASE_URL="file:./dev.db"
 NEXTAUTH_SECRET="your-secret-key"
 NEXTAUTH_URL="http://localhost:3000"
 💡 Replace "your-secret-key" with a strong, secure string.

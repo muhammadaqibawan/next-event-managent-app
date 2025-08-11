@@ -3,6 +3,7 @@
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "types": ["jest", "node"],
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
@@ -13,7 +14,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "./",  
+    "baseUrl": "./",
     "plugins": [
       {
         "name": "next"
@@ -23,6 +24,12 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/scripts/reminderCron.cjs"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/scripts/reminderCron.cjs"
+  ],
   "exclude": ["node_modules"]
 }

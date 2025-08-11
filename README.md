@@ -23,11 +23,12 @@ A **production-grade** Event Management Dashboard built using modern technologie
 
 Follow these steps to run the project locally:
 
-### 1️⃣ Clone the Repository
-
 ```bash
+1️⃣ Clone the Repository
 git clone <repo-url>
 cd event-management-dashboard
+
+
 
 2️⃣ Install Dependencies
 npm install

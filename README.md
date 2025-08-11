@@ -1,4 +1,4 @@
-# 🎉 Event Management Dashboard
+# Event Management Dashboard
 
 A **production-grade** Event Management Dashboard built using modern technologies like **Next.js 15**, **TypeScript**, **SQLite**, and more. This project is architected for **scalability**, **component reusability**, and **distributed system thinking**.
 
@@ -79,7 +79,7 @@ We use **Redis** to cache data that’s accessed frequently and is costly to fet
 
 ---
 
-## 2. 🛠 Background Tasks with BullMQ
+## 2. Background Tasks with BullMQ
 
 We use **BullMQ** (backed by Redis) to handle tasks behind the scenes without slowing down the app.
 

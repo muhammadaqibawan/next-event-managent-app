@@ -2,11 +2,11 @@
 
 A **production-grade** Event Management Dashboard built using modern technologies like **Next.js 15**, **TypeScript**, **SQLite**, and more. This project is architected for **scalability**, **component reusability**, and **distributed system thinking**.
 
-> 📌 Ideal for managing, categorizing, and publishing events in a streamlined dashboard UI.
+> Ideal for managing, categorizing, and publishing events in a streamlined dashboard UI.
 
 ---
 
-## ⚙️ Getting Started
+## Getting Started
 
 Follow these steps to run the project locally:
 
@@ -40,7 +40,7 @@ Once running, visit:
 You'll see the homepage with a list of unpublished events, each displayed as a card with a badge on top indicating its status:
 ```
 
-# 📈 App Scaling Strategy
+# App Scaling Strategy
 
 As our app continues to grow with more users, events, and reminders, we need to make sure it stays fast, responsive, and scalable. This document outlines our scaling strategy using Redis, BullMQ, and real-time updates.
 
@@ -62,7 +62,7 @@ We use **Redis** to cache data that’s accessed frequently and is costly to fet
 - Reminder stats and logs for dashboards
 - Frequently used settings that rarely change
 
-### ⏱ Why 1-Hour TTL?
+### Why 1-Hour TTL?
 
 - **Fresh enough** – Data is always less than 60 minutes old.
 - **Performance boost** – Cuts down on database traffic.
@@ -103,7 +103,7 @@ To provide real-time updates, we use **Redis Pub/Sub** or external services like
 
 ---
 
-## ✅ Summary
+## Summary
 
 | Component | Purpose                   |
 | --------- | ------------------------- |
@@ -113,7 +113,7 @@ To provide real-time updates, we use **Redis Pub/Sub** or external services like
 
 This setup helps ensure our app remains efficient, scalable, and user-friendly as we grow.
 
-# 🌍 Deployment Options: AWS vs Vercel
+# Deployment Options: AWS vs Vercel
 
 As our app grows and we aim for better performance around the world, simple breakdown of what things look like if **we deploy on AWS** or **Vercel**, and how it impacts scaling, complexity, and our database setup.
 
@@ -139,15 +139,15 @@ We’d likely **Dockerize** the app and run it using:
 - **ECS**, **EKS**, or
 - **AWS App Runner** for easy horizontal scaling (more containers when we need more power).
 
-### ⚠️ Complexity Level: High
+### Complexity Level: High
 
 Managing an AWS-based setup means we handle everything — from networking and failover to DNS routing (using something like **Route53**). It's powerful, but also comes with more responsibility and setup time.
 
 ---
 
-## 🟩 Option 2: Deploying on **Vercel**
+## Option 2: Deploying on **Vercel**
 
-### 🌍 Multi-Region by Default
+### Multi-Region by Default
 
 Vercel makes global deployment easy. It automatically deploys our app across regions with **edge caching** for static files and some API routes — no extra setup required. But: **our database still needs its own multi-region setup**.
 
@@ -168,7 +168,7 @@ This setup is much simpler. We focus on writing code, and Vercel handles the inf
 
 ---
 
-## 🔍 Summary Comparison
+## Summary Comparison
 
 | Feature              | AWS                            | Vercel                        |
 | -------------------- | ------------------------------ | ----------------------------- |

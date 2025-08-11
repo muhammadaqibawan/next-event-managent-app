@@ -25,39 +25,26 @@ Follow these steps to run the project locally:
 
 ### 1️⃣ Clone the Repository
 
-````bash
+```bash
 git clone <repo-url>
 cd event-management-dashboard
 
-
-## 2️⃣ Install Dependencies
-
-```bash
+2️⃣ Install Dependencies
 npm install
 
 
 3️⃣ Set Up Environment Variables
 Create a .env file in the root of your project and add the following:
-
-env
-Copy
-Edit
 DATABASE_URL="file:./dev.db"
 NEXTAUTH_SECRET="your-secret-key"
 NEXTAUTH_URL="http://localhost:3000"
-
-Note: Replace "your-secret-key" with a strong, secure string.
+💡 Replace "your-secret-key" with a strong, secure string.
 
 4️⃣ Run the Setup Scripts
-bash
-Copy
-Edit
 npm run setup
 npm run dev
-
-Access the Application
-Once running, open your browser and visit:
+Once running, visit:
 🔗 http://localhost:3000
 
-You will see the homepage with a list of unpublished events. Each event is displayed as a card with a badge indicating its status:
-````
+You'll see the homepage with a list of unpublished events, each displayed as a card with a badge on top indicating its status:
+```

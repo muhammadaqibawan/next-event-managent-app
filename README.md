@@ -10,7 +10,7 @@ A **production-grade** Event Management Dashboard built using modern technologie
 
 Follow these steps to run the project locally:
 
-```bash
+````bash
 1️⃣ Clone the Repository
 git clone <repo-url>
 cd event-management-dashboard
@@ -33,12 +33,20 @@ NEXTAUTH_URL="http://localhost:3000"
 npm run setup
 npm run dev
 
+## 4. ⏰ Running the CRON Job
+We’ve added a CRON job you can run via:
+
+```bash
+npm run cron
+
+This job will log reminders and add them to the ReminderLog table.
+
 
 Once running, visit:
 🔗 http://localhost:3000
 
 You'll see the homepage with a list of unpublished events, each displayed as a card with a badge on top indicating its status:
-```
+````
 
 # App Scaling Strategy
 

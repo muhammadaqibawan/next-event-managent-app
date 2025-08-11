@@ -33,6 +33,7 @@ cd event-management-dashboard
 npm install
 
 
+
 3️⃣ Set Up Environment Variables
 Create a .env file in the root of your project and add the following:
 DATABASE_URL="file:./dev.db"
@@ -40,9 +41,12 @@ NEXTAUTH_SECRET="your-secret-key"
 NEXTAUTH_URL="http://localhost:3000"
 💡 Replace "your-secret-key" with a strong, secure string.
 
+
 4️⃣ Run the Setup Scripts
 npm run setup
 npm run dev
+
+
 Once running, visit:
 🔗 http://localhost:3000
 

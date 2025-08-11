@@ -6,19 +6,6 @@ A **production-grade** Event Management Dashboard built using modern technologie
 
 ---
 
-## 🖼️ Features
-
-- ✅ Dashboard view for all unpublished events
-- 🕓 Event badges indicating:
-  - **Past** – Events that have already occurred
-  - **New** – Events happening within the next 2 weeks
-  - **Upcoming** – Future events beyond 2 weeks
-- 🧩 Reusable and scalable components
-- 🔒 Authenticated access using NextAuth
-- ⚡ Fast and responsive UI with shadcn/ui
-
----
-
 ## ⚙️ Getting Started
 
 Follow these steps to run the project locally:
